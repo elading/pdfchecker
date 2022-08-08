@@ -5,8 +5,7 @@ import re
 import sys
 import argparse
 
-#Script to check and delete documents with a pdf version
-#run with: python slette_doc.py -d /path/to/dir 
+#run with: python PDFChecker.py -d /path/to/dir 
 file_types = ['.pptx', '.docx']
 
 parser = argparse.ArgumentParser(description='slett dokumenter som har en pdf versjon')
@@ -16,7 +15,6 @@ dir = args.dir
 
 output_file = open('log_pdfcheck.txt', 'w')
 
-#run for each file_type
 for file_type in file_types:
     for root, dirs, files in os.walk(dir):
         for file in files:
